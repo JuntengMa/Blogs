@@ -11,6 +11,12 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
 # Redux 的基础概念
 
+什么是Redux?
+
+Redux 是 JavaScript 状态容器，提供可预测化的状态管理。
+
+
+
 ## 三个基本原则
 
 - 整个应用只有一个可信数据源 ---  store
@@ -117,3 +123,20 @@ store.dispatch({ type: 'CHANGE_B', payload: 'Modified b' });
 unsubscribe();
 ```
 
+# Redux 和 React-Redux 区别
+
+### 1.Redux
+
+用户视图层的操作执行了dispatch,
+
+dispatch又调用了Reducers函数,
+
+Reducers获取当前状态state进行业务处理,形成一个newState保存到Store仓库中,
+
+Store所有依赖的视图层发生同步更新![redux数据流](https://s3.ax1x.com/2020/11/17/DVtjnP.png)
+
+限制:只能在当前这一层进行传递,如果项目关系比较复杂,层次比较深 , 只能用props进行逐层传递------>**redux不能进行跨层级获取数据**---->React-Redux解决
+
+###  2.React-Redux
+
+![react-redux工作流程2](https://s3.ax1x.com/2020/11/17/DVNPpj.png)

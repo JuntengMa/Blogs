@@ -2,7 +2,7 @@
 title: "自己比较常用的一些git操作"
 categories: tools
 tags: Git
-top: 8888888 #是否置顶
+top: 88 #是否置顶
 cover: https://drscdn.500px.org/photo/266684907/q%3D80_h%3D450/v2?sig=fddd93a565bfc0a0a823bc71cd0423438214b85fcf84920f0a505614f87b5e75
 coverWidth: 1200
 coverHeight: 750

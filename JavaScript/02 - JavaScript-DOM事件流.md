@@ -1,5 +1,6 @@
 ---
 coverWidth: 1200
+date: 2020-11-03
 coverHeight: 750
 title: DOM事件 , 事件流
 categories: JavaScript
@@ -7,7 +8,9 @@ tags: DOM事件事件流
 top:
 cover: https://images.unsplash.com/photo-1598099114415-3076be5be744?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjg5ODI0fQ
 ---
+> <h4> 
 > DOM事件, 事件流
+> </h4>
 
 <!--more-->
 
@@ -21,7 +24,8 @@ DOM 级别分为四个级别：DOM0 级、DOM1 级、DOM2 级、DOM3 级；
 ![B1JoY4.md.jpg](https://s1.ax1x.com/2020/10/28/B1JoY4.md.jpg)
 
 DOM事件分为三个级别:
-DOM0 级事件
+DOM0 级事件: 给元素绑定事件
+
 ```
 <button id="btn" type="button"></button>
 <script>
@@ -34,7 +38,7 @@ DOM0 级事件
 ```
 >	缺点：无法设置多个事件处理函数
 
-DOM2 级事件
+DOM2 级事件:用到了事件监听
 
 ```
 <button id="btn" type="button"></button>
@@ -67,6 +71,7 @@ UI事件，当用户与页面上的元素交互时触发，如：load、scroll
 键盘事件，当用户通过键盘在页面上执行操作时触发，如：keydown、keypress
 合成事件，当为IME（输入法编辑器）输入字符时触发，如：compositionstart
 变动事件，当底层DOM结构发生变化时触发，如：DOMsubtreeModified
+
 ```
 // 自定义事件
 var event = new Event('test')
@@ -93,8 +98,6 @@ setTimeout(function() {
 > - 事件冒泡(bubbling phase)
 > 
 > 发生的顺序是：事件捕获阶段 --> 目标事件阶段 --> 事件冒泡阶段
-
-![B1tIz9.png](https://s1.ax1x.com/2020/10/28/B1tIz9.png)
 
 #### 事件冒泡
 
@@ -151,7 +154,7 @@ setTimeout(function() {
 
 运行结果：
 
-![B1UStU.gif](https://s1.ax1x.com/2020/10/28/B1UStU.gif)
+
 
 #### 事件捕获
 
@@ -208,4 +211,3 @@ setTimeout(function() {
 
 运行结果:
 
-![B1UCp4.gif](https://s1.ax1x.com/2020/10/28/B1UCp4.gif)

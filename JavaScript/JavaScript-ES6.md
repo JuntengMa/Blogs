@@ -2,12 +2,17 @@
 cover: 'https://source.unsplash.com/user/erondu/1440x960'
 coverWidth: 1200
 coverHeight: 750
-title:
+date: 2020-09-02
+title: ES6
 categories: JavaScript
 tags: ES6
 top:
 permalink:
 ---
+> <h4> 
+>  ES6
+> </h4>
+
 <!--more-->
 
 

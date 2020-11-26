@@ -2,12 +2,19 @@
 cover: 'https://source.unsplash.com/user/erondu/1440x960'
 coverWidth: 1200
 coverHeight: 750
+date: 2020-10-01
 title: JavaScript处理异步函数几种方案
 categories: JavaScript
 tags: JavaScript
 top:
 permalink:
 ---
+> <h4> 
+>  for-in & for-of的区别 和 map-for & Each区别
+> </h4>
+
+<!--more-->
+
 # JS处理异步函数几种方案
 
 #### 1.回调函数

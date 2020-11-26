@@ -80,7 +80,7 @@ React的生命周期就是组件从初始化到卸载到全过程，可以分为
   - `-`componentWillupdate()
   - `+`getSnapshotBetforeupdate()
 
-React16中也去掉了componentWillUpdate方法，新增了getSnapshotBrforeUpdate方法，这个方法在render方法之后，componentDidUpdate之前被执行，即真实DOM更新之前（获取更新前的真实DOM和更新前后的State&props信息）。该方法需要一个返回值，作为componentDidUpdate的第三个参数。
+React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpdate方法，这个方法在render方法之后，componentDidUpdate之前被执行，即真实DOM更新之前（获取更新前的真实DOM和更新前后的State&props信息）。该方法需要一个返回值，作为componentDidUpdate的第三个参数。
 
 - ###### componentWillReceiveProps()和getDerivedStateFormProps()区别
 
@@ -120,7 +120,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBrforeUpda
 
 #### 02 / Virtual Dom
 
-![](https://s1.ax1x.com/2020/11/09/BH1gUK.png)
+
 
 - 什么是Virtual Dom?
 
@@ -252,6 +252,23 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBrforeUpda
 
 #### 03 / diff算法
 
+- DIFF算法是DOM更新的一种算法,指页面被更新时,程序用哪种策略更新DOM
+- 作用是用来计算出 **Virtual DOM** 中被改变的部分，然后针对该部分进行原生DOM操作，而不用重新渲染整个页面。
+
+DIFF算法策略:
+
+- Tree Diff	对树每一层进行遍历，找出不同
+
+  ![](https://s3.ax1x.com/2020/11/17/DVYzW9.png)
+
+- Component Diff  是数据层面的差异比较
+
+- Element Diff  真实DOM渲染，结构差异的比较
+
+  -  Diff提供三种DOM操作：**删除**、**移动**、**插入**。
+
+![](https://s3.ax1x.com/2020/11/17/DVYozn.png)
+
 #### 04 / fiber架构
 
 > fiber架构是React16对核心算法的一次重构
@@ -264,7 +281,9 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBrforeUpda
 >
 > 该过程是是一个递归的过程,调用栈非常深,只有最低层的返回了,才能逐层返回.
 >
-> 这个过程漫长且不可打断,同步一旦开始,就会牢牢抓住线程,直到递归完成,这个过程浏览器除了渲染不会再做其他事情,无法处理用户交互状态,页面可能会卡死
+> 这个过程漫长且不可打断,同步一旦开始,就会牢牢抓住线程,直到递归完成,这个过程浏览器除了渲染不会再做其他事情,无法处理用户
+>
+> 交互状态,页面可能会卡死
 
 **4.2 Fiber是怎样处理渲染的？**
 
@@ -308,4 +327,40 @@ componentWillReceiveProps。
 
 #### 05 / React数据传递方案
 
-- 
+- 组件传值
+- context
+- redux
+
+#### 06 / setState之后发生什么?
+
+一、React中setState后发生了什么
+
+> 在代码中调用setState函数之后，React 会将传入的参数对象与组件当前的状态合并，然后触发所谓的调和过程(Reconciliation)。
+>
+> 经过调和过程，React 会以相对高效的方式根据新的状态构建React元素树并且着手重新渲染整个Ul界面。
+>
+> 在React得到元素树之后，React 会自动计算出新的树与老树的节点差异，然后根据差异对界面进行最小化重渲染。 在差异计算算法中，React 能够相对精确地知道哪些位置发生了改变以及应该如何改变,这就保证了按需更新，而不是全部重新渲染。
+
+二、setState 为什么默认是异步
+
+> 假如所有setState是同步的，意味着每执行一次setState时 (有可能一个同步代码中， 多次setState) 都重新vnode diff + dom修改，这对性能来说是极为不好的。如果是异 步，则可以把一一个同步代码中的多个setState合并成- -次组件更新。
+
+三、setState什么时候是同步
+
+> 在setTimeout或者原生事件中，setState是同步的。
+
+#### 7 / componentWillUpdate可以直接修改state的值吗？ 
+
+> react组件在每次需要重新渲染时候都会调用`componentWillUpdate()`,
+>
+> 例如，我们调用 `this.setState()`时候
+>
+> 在这个函数中我们之所以不调用`this.setState()`是因为该方法会触发另一个`componentWillUpdate()`,如果我们`componentWillUpdate()`中触发状态更改,我们将以无限循环结束.
+
+#### 8 / 使用Hooks要遵守哪些原则？
+
+> 1. 只在最顶层使用 Hook, 不要在循环，条件或嵌套函数中调用 Hook， 确保总是在你的 React 函数的最顶层调用他们。
+> 2. 只在 React 函数中调用 Hook, 不要在普通的 JavaScript 函数中调用 Hook。
+> 3. 可以：
+>    ✅ 在 React 的函数组件中调用 Hook
+>    ✅ 在自定义 Hook 中调用其他 Hook

@@ -2,13 +2,21 @@
 title: JavaScript获取元素位置
 coverWidth: 1200
 coverHeight: 750
+date: 2020-09-01
 categories: JavaScript
 tags: JavaScript
 top:
 cover: https://source.unsplash.com/collection/190720/1600x900
 ---
-## js获取元素相对于父级元素的高度
+
+> <h4> 
+>  JavaScript获取元素位置
+> </h4>
+
+
 <!--more-->
+## js获取元素相对于父级元素的高度
+
 #### 1. offsetLeft 、offsetTop
 
 offsetLeft/offsetTop -  用于获取子元素相对于父元素的位移（左位移、上位移）

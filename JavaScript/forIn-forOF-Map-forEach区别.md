@@ -2,12 +2,17 @@
 cover: https://images.unsplash.com/photo-1602524206684-fdf6393c7d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
 coverWidth: 1200
 coverHeight: 750
+date: 2020-10-09
 title: for-in & for-of的区别 和 map-for & Each区别
 categories: JavaScript
 tags: 
 top:
 permalink:
 ---
+> <h4> 
+>  for-in & for-of的区别 和 map-for & Each区别
+> </h4>
+
 <!--more-->
 
 ### for-in

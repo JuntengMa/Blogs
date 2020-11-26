@@ -12,5 +12,5 @@ cover: https://drscdn.500px.org/photo/232709117/h%3D1080/v2?sig=96b93532e8ed13df
 ```
 word-wrap:break-word; 
 word-break:break-all; 
-overflow: hidden;/*这个参数根据需要来绝对要不要*/
+overflow: hidden;/*这个参数根据需要来决定要不要*/
 ```

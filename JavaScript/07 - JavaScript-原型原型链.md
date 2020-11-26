@@ -1,13 +1,16 @@
 ---
 coverWidth: 1200
 coverHeight: 700
+date: 2020-11-20
 title: 原型,原型链
 categories: JavaScript
 tags: 原型原型链
 top:
 cover: https://images.unsplash.com/photo-1601636358831-cfb548152c2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg5ODI0fQ&w=750&dpi=2
 ---
-> ​	原型原型链
+> <h4> 
+>  原型,原型链
+> </h4>
 
 <!--more-->
 

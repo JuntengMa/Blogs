@@ -2,18 +2,23 @@
 title: 浏览器解析js流程
 coverWidth: 1200
 coverHeight: 750
+date: 2020-11-16
 categories: JavaScript
 tags: 浏览器解析js流程
 top:
 cover: https://drscdn.500px.org/photo/121778583/q%3D80_h%3D450/v2?sig=1faf991958dec8e17caf41e5b6041c014e15d404ea63e6a139ebf5e7636f7bb6
 ---
-> 浏览器解析js流程
+> <h4> 
+>  浏览器解析js流程
+> </h4>
+
+
 <!--more-->
 #### JS解析
 
 [![BufjDe.png](https://s1.ax1x.com/2020/10/26/BufjDe.png)](https://imgchr.com/i/BufjDe)
 
-js解析是由浏览器的就是解析引擎完成的.
+js解析是由浏览器	
 
 js是单线程运行,也就是说同时只能做一件事,所有任务都需要排队,
 

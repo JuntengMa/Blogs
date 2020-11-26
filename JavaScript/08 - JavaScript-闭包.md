@@ -2,12 +2,19 @@
 cover: 'https://source.unsplash.com/user/erondu/1440x960'
 coverWidth: 1200
 coverHeight: 750
+date: 2020-11-01
 title:
 categories: JavaScript
 tags: 闭包
 top:
 permalink:
 ---
+
+> <h4> 
+>  闭包
+> </h4>
+
+
 <!--more-->
 
 #### 0/前置知识:

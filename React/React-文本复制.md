@@ -13,6 +13,9 @@ cover: https://source.unsplash.com/random?count=8/1600x900
 <!--more-->
 
 ## 方案一：
+
+
+
 ```js
 copyTranslateResult = () => {
         const copyDOM = document.querySelector('.translateResult');
@@ -30,30 +33,23 @@ copyTranslateResult = () => {
             var successful = document.execCommand('copy'); // 执行 copy 操作
 
             if (successful) {
-
+								//这里使用了antd的message组件
                 message.success('复制成功！');
 
             } else {
-
+								//这里使用了antd的message组件
                 message.warning('复制失败，请手动复制！');
-
             }
-
             // 移除选中的元素
-
             window.getSelection().removeAllRanges();
-
         } else {
-
             message.warning('没有内容');
-
         }
 
     };
 ```
-## 方案二(推荐，方案一兼容性不高)：
-**react-copy-to-clipboard：**
-https://github.com/nkbt/react-copy-to-clipboard
+## 方案二(推荐该方案，方案一自测ios不兼容)：
+[antd社区精选组件推荐](https://ant.design/docs/react/recommendation-cn): **[react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard)：**
 
 #### Install
 ```

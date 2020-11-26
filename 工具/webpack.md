@@ -65,8 +65,14 @@ new webpack.HotModuleReplacementPlugin(),
 ```
 #### 4. 打包分析插件
 ```
-https://github.com/webpack-contrib/webpack-bundle-analyzer
-new BundleAnalyzerPlugin(),
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
+}
+//安装， 然后重启一下server， 然后就可以在http://127.0.0.1:8888/ 看到这个分析了。
 ```
 #### 5.  开启进度条
 ```
@@ -79,5 +85,10 @@ const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
 const smp = new SpeedMeasurePlugin();
 
-module.exports = smp.wrap({});
+const webpackConfig = smp.wrap({
+  plugins: [
+    new MyPlugin(),
+    new MyOtherPlugin()
+  ]
+});
 ```
